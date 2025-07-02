@@ -1,103 +1,109 @@
-import Image from "next/image";
+import Navbar from './components/Navbar';
+import Footer from './components/Footer' // uncomment if you use it
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div>
+      <Navbar />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Hero Section without dark overlay */}
+      <div
+        className="min-h-screen bg-cover bg-center bg-no-repeat sm:bg-top  flex items-center justify-center"
+        style={{ backgroundImage: "url('/background.png')" }}
+      >
+      </div>
+
+      <section className="py-12">
+        <div className="max-w-screen-lg mx-auto px-4">
+          <div className="flex justify-between items-center w-full">
+            <img src="/character1.png" alt="Left Image" className="w-24 h-30 object-contain" />
+            <img src="/character2.png" alt="Center Image" className="w-24 h-30 object-contain" />
+            <img src="/character3.png" alt="Right Image" className="w-24 h-30 object-contain" />
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+{/* Categories Section */}
+<section className="py-12 px-4">
+  <div className="max-w-screen-lg mx-auto px-50">
+    
+    {/* Categories Title */}
+    <h2 className="text-3xl font-bold mb-6 text-indigo-600 text-left">Categories</h2>
+
+    {/* Categories Grid */}
+    <div className="flex flex-wrap justify-start gap-8 mb-12">
+      {/* Hoodie */}
+      <div className="flex flex-col items-center">
+        <img src="/hoodie1.png" alt="Hoodies" className="w-32 h-32 rounded-full object-cover" />
+        <p className="mt-2 font-semibold text-sm text-indigo-600">Hoodies</p>
+      </div>
+
+      {/* T-shirts */}
+      <div className="flex flex-col items-center">
+        <img src="/tshirt1.png" alt="T-shirts" className="w-32 h-32 rounded-full object-cover" />
+        <p className="mt-2 font-semibold text-sm text-indigo-600">T-shirts</p>
+      </div>
+
+      {/* Accessories */}
+      <div className="flex flex-col items-center">
+        <img src="/accessory1.png" alt="Accessories" className="w-32 h-32 rounded-full object-cover" />
+        <p className="mt-2 font-semibold text-sm text-indigo-600">Accessories</p>
+      </div>
+
+      {/* Gaming Hoodies */}
+      <div className="flex flex-col items-center">
+        <img src="/gaming1.png" alt="Gaming Hoodies" className="w-32 h-32 rounded-full object-cover" />
+        <p className="mt-2 font-semibold text-sm text-indigo-600">Gaming Hoodies</p>
+      </div>
     </div>
-  );
+
+    {/* Choose By Anime Section */}
+    <h2 className="text-2xl font-bold mb-6 text-indigo-600 text-left">Choose By Anime</h2>
+
+    <div className="grid grid-cols-3 md:grid-cols-5 gap-20">
+      {[
+        { src: "/aot.png", name: "Attack On Titan" },
+        { src: "/berserk.png", name: "Berserk" },
+        { src: "/onepiece.png", name: "One Piece" },
+        { src: "/jujutsu.png", name: "Jujutsu Kaisen" },
+        { src: "/bleach.png", name: "Bleach" },
+        { src: "/solo.png", name: "Solo Leveling" },
+        { src: "/hxh.png", name: "Hunter X Hunter" },
+        { src: "/dbz.png", name: "Dragon Ball" }
+      ].map(({ src, name }) => (
+        <div key={name} className="flex flex-col items-center">
+          <img src={src} alt={name} className="w-16 h-16 object-contain" />
+          <p className="mt-2 font-semibold text-xs text-indigo-600 text-center">{name}</p>
+        </div>
+      ))}
+    </div>
+    {/* Featured Section */}
+<div className="mt-16 space-y-12">
+  {/* Featured Products */}
+  <div className="flex items-center justify-between">
+    <h2 className="text-2xl font-bold text-indigo-600">Featured Products</h2>
+    <button className="bg-indigo-500 text-white px-4 py-2 rounded-full flex items-center hover:bg-indigo-600 transition">
+      Shop Now <span className="ml-2">🛒</span>
+    </button>
+  </div>
+
+  {/* Featured Accessories */}
+  <div className="flex items-center justify-between">
+    <h2 className="text-2xl font-bold text-indigo-600">Featured Accessories</h2>
+    <button className="bg-indigo-500 text-white px-4 py-2 rounded-full flex items-center hover:bg-indigo-600 transition">
+      Shop Now <span className="ml-2">🛒</span>
+    </button>
+  </div>
+</div>
+  </div>
+</section>
+
+
+
+
+
+      {/* <Footer /> */}
+      <Footer></Footer>
+    </div>
+  )
 }
